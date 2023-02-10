@@ -1,0 +1,31 @@
+.quantity-incrementor__input {
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  margin: 0px 20px;
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.quantity-incrementor__input::-webkit-inner-spin-button,
+.quantity-incrementor__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantityIncrementorPlus {
+  margin-right: 20px;
+}
+
+.quantityIncrementorMinus {
+  margin-left: 20px;
+}
+
+.quantityIncrementorPlus,
+.quantityIncrementorMinus {
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+}

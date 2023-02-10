@@ -1,0 +1,12 @@
+.shoppingBagItem {
+  margin: 20px 0px;
+}
+
+.shoppingBagItemImg {
+  height: 220px;
+}
+
+.shoppingBagItemImg img {
+  object-fit: cover;
+  object-position: 80% 0%;
+}

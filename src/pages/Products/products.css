@@ -1,0 +1,129 @@
+.products {
+  margin-top: 12vh;
+}
+
+/* immediate container */
+.products > .container {
+  display: grid;
+  grid-template-columns: 23% auto;
+  grid-gap: 30px;
+  position: relative;
+}
+
+.filteredProducts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.filteredProducts .productItem {
+  min-height: initial;
+  min-width: initial;
+  margin-right: 0px;
+}
+.filter {
+  background: white;
+  padding: 22px;
+  height: 80vh;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   */
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+
+  /* display: block; */
+  /* position: fixed;
+  left: 0px;
+  top: 10vh; */
+}
+
+.filter h3 {
+  font-size: 20px;
+}
+
+.filter .line {
+  height: 3px;
+  background-color: crimson;
+  display: block;
+  margin: 15px 0px 25px 0px;
+}
+
+.filter label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+}
+
+.filter select,
+.filter span {
+  margin-bottom: 35px;
+}
+
+.filter input,
+.filter select {
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.filter span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.filter .price {
+  margin-top: 10px;
+  font-weight: 400 !important;
+  color: black;
+  font-size: 12px;
+}
+
+main > h3 {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.filter .rangeSlider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  background: var(--primary-sky-blue); /* Green background */
+  width: 130px; /* Set a specific slider handle width */
+  height: 4px; /* Slider handle height */
+
+  outline: none;
+  border-radius: 25px;
+}
+
+.filter .rangeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 12px; /* Set a specific slider handle width */
+  height: 12px; /* Slider handle height */
+  background: var(--primary-sky-blue); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%;
+}
+
+.productSearchInput {
+  padding: 10px;
+  outline: none;
+  border-radius: 32px;
+  border: 1px solid grey;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+main h4 {
+  font-size: 25px;
+}
+
+.divider {
+  height: 1px;
+  background: rgb(176, 176, 176);
+  width: 80%;
+  display: inline-block;
+  margin-left: 1%;
+}

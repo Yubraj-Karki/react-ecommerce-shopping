@@ -1,0 +1,15 @@
+.featuredProductsContainer {
+  overflow: hidden;
+}
+
+.featured {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+  /* border: 1px solid green; */
+}
+
+#activeSlider {
+  transform: translateX(-290px);
+}

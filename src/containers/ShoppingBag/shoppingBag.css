@@ -1,0 +1,121 @@
+.shoppingBagWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(25, 27, 34);
+  z-index: 9999;
+  transition: 0.5s ease;
+}
+
+.showOverlay {
+  display: block;
+  opacity: 0.9;
+}
+
+.hideOverlay {
+  display: none;
+}
+
+.showShoppingCart {
+  transform: translateX(0%);
+}
+
+.hideShoppingCart {
+  transform: translateX(100%);
+}
+
+.shoppingBag {
+  z-index: 99999;
+  position: fixed;
+  right: 0px;
+  top: 0%;
+  height: 100vh;
+  width: 35vw;
+  background-color: white;
+  transition: 0.5s ease;
+}
+
+.shoppingBagItems {
+  overflow: scroll;
+  height: 70%;
+}
+
+.shoppingBagFooter {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  /* background-color: green; */
+  height: 30%;
+}
+
+.shoppingBagHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.shoppingBagHeader h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.shoppingCloseBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  width: 20px;
+  color: #2a2a2a;
+}
+
+.shoppingBagItemFooter {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+
+.checkOutBtn {
+  background-color: #00101d;
+  width: 100%;
+  border: none;
+  padding: 18px;
+  color: white;
+  letter-spacing: 1.5;
+  cursor: pointer;
+  margin: 20px 0px 10px 0px;
+  font-weight: 700;
+}
+
+.shoppingBagFooter span {
+  display: block;
+  height: 1px;
+  background-color: lightgrey;
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.shoppingBagTotal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shoppingBagTotal h3 {
+  font-size: 16px;
+  color: #2a2a2a;
+}
+
+.nameAndPrice {
+  line-height: 1.2;
+}
+.nameAndPrice h3 {
+  font-size: 16px;
+}
+
+.nameAndPrice p {
+  font-size: 12px;
+}

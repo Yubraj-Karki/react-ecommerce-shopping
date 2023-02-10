@@ -1,0 +1,100 @@
+.nav {
+  background-color: white;
+  color: black;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  /* border-bottom: 1px solid rgb(212, 212, 212); */
+}
+
+.nav a {
+  color: black;
+}
+
+.nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style-type: none;
+  font-size: 16px;
+}
+
+.nav-left li {
+  margin-right: 27px;
+  /* font-weight: 600; */
+  font-size: 17px;
+}
+
+.nav-right .cart {
+  display: flex;
+  align-items: center;
+}
+
+.nav .cartIconWrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 27px;
+}
+
+.nav .cartIcon {
+  font-weight: bold;
+  font-size: 24px;
+  color: black !important;
+  margin-right: 0px;
+  stroke-width: 2.1px;
+}
+.nav-mid {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-family: "Proza Libre";
+  margin-right: 6%;
+}
+
+.nav-right {
+  background-color: #e6e6e6;
+  padding: 15px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.nav-right .loginBtn {
+  margin-left: 80px;
+  border: none;
+  border-radius: 45px;
+  padding: 12px;
+  width: 150px;
+  background-color: crimson;
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+  display: none;
+}
+
+.itemCount {
+  background-color: black;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  transform: translate(-2px, -4px);
+}
+
+.cart .totalPrice {
+  font-size: 14px;
+}

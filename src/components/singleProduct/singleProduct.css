@@ -1,0 +1,98 @@
+.singleProduct {
+  margin-top: 12vh;
+  background: white;
+  height: 100%;
+}
+
+.singleProductHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.productContent {
+  display: grid;
+  grid-template-columns: 45% auto;
+  grid-gap: 20px;
+  height: 100%;
+  overflow: hidden;
+  align-items: center;
+}
+
+.singleProduct .productContent .left {
+  height: 540px;
+  /* height: 100%; */
+}
+
+.singleProduct .productContent .left img {
+  object-fit: cover;
+  height: 100%;
+  object-position: 30% 0%;
+}
+
+.singleProductName {
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.singleProductPrice {
+  font-size: 22px;
+  font-weight: light;
+  color: #010101;
+}
+
+.singleProductGender {
+  text-transform: capitalize;
+  font-size: 17px;
+  margin-top: 11px;
+  color: #9d9b9b;
+}
+
+.singleProductDescription {
+  font-size: 17px;
+  line-height: 1.9;
+  margin: 25px 0px;
+  color: #444444;
+}
+
+.addToCartBtn {
+  padding: 15px 10px;
+  background-color: #00101d;
+  border: none;
+  outline: none;
+  color: rgb(247, 247, 247);
+  width: 60%;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 1.9px;
+  text-transform: uppercase;
+  font-weight: 400;
+  /* border-radius: 5px; */
+}
+.productAddAndQtty {
+  justify-self: flex-start;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.quantityIncrementor {
+  /* margin-right: 20px; */
+  display: flex;
+  align-items: center;
+}
+
+.quantity-incrementor label {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.singleProductDivider {
+  height: 1px;
+  width: 100%;
+  background: grey;
+}
+
+.singleProduct .productContent .right {
+  padding: 20px;
+}
