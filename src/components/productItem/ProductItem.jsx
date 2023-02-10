@@ -1,20 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./productItem.css";
 import { Link } from "react-router-dom";
 
-import { MyContext } from "../../context";
-
 const ProductItem = ({ product, sliderMovement }) => {
-  const { id, name, price, images, size, slug } = product;
+  const { id, name, price, images } = product;
 
   const sliderStyle = {
     transform: `translateX(${sliderMovement}px)`,
     transition: "0.5s ease",
   };
-
-  // console.log(images);
-
-  // console.log(position);
 
   return (
     <div style={sliderStyle} className="productItem">

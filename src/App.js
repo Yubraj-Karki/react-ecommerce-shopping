@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Navbar, SingleProduct, ToastNotification } from "./components/index";
-import { Home, Products, SingleItem } from "./pages/index";
+import { Home, Products } from "./pages/index";
 import { ShoppingBag } from "./containers/index";
 
 const App = () => {
