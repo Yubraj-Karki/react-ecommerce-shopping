@@ -14,8 +14,16 @@ const SingleProduct = () => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    setProduct(getProduct(slug));
-  }, [getProduct, slug]);
+    try {
+      const product = getProduct(slug);
+      setProduct(product);
+    } catch (error) {
+      console.error(error);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slug]);
+
+  console.log(product, "product");
 
   const { id, name, gender, price, description, images } = product;
 

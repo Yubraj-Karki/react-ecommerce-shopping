@@ -62,9 +62,10 @@ export const ContextProvider = ({ children }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [size, maxPrice, gender]);
 
-  const getProduct = (id) => {
+  const getProduct = (slug) => {
     let tempProducts = [...products];
-    let product = tempProducts.find((product) => product.id === id);
+    // eslint-disable-next-line eqeqeq
+    let product = tempProducts.find((product) => product.id == slug);
 
     return product;
   };
