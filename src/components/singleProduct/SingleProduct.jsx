@@ -2,27 +2,22 @@ import { React, useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { MyContext } from "../../context";
 
-import { ProductItem, ProductIncrementor } from "../index";
+import { ProductIncrementor } from "../index";
 
 import "./singleProduct.css";
 
 const SingleProduct = () => {
-  const {
-    getProduct,
-    addToCart,
-    counterValues,
-    setCounterValues,
-    handleIncrementorChange,
-  } = useContext(MyContext);
+  const { getProduct, addToCart, counterValues, handleIncrementorChange } =
+    useContext(MyContext);
 
   const { slug } = useParams();
   const [product, setProduct] = useState({});
 
   useEffect(() => {
     setProduct(getProduct(slug));
-  }, [slug]);
+  }, [getProduct, slug]);
 
-  const { id, name, gender, size, price, description, images, count } = product;
+  const { id, name, gender, price, description, images } = product;
 
   const buttonStyleDisable = {
     opacity: 0.3,

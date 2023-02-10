@@ -1,8 +1,6 @@
 import React from "react";
 import { FeaturedProducts } from "../../containers/index";
 
-// import backgroundVideoOne from "public/Videos/productionID_5119278.mp4";
-
 import "./home.css";
 
 import { BsArrowReturnRight } from "react-icons/bs";

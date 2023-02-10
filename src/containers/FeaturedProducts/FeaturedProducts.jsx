@@ -7,22 +7,16 @@ import { Link } from "react-router-dom";
 import "./FeaturedProducts.css";
 
 const FeaturedProducts = () => {
-  const { featuredProducts, products, sliderItems } = useContext(MyContext);
-  const [sliderMovement, setSliderMovement] = useState(0);
+  const { featuredProducts } = useContext(MyContext);
+  const [sliderMovement] = useState(0);
 
   // const [sliderIndex, setSliderIndex] = useState(0);
-
-  let position = "";
-
-  const handleSlider = () => {
-    setSliderMovement(sliderMovement - 250);
-  };
 
   return (
     <>
       <div className="container featuredProductsContainer">
         <div className="featured">
-          {featuredProducts.map((product, index) => {
+          {featuredProducts.map((product) => {
             // const {id, name, price, images, size, slug} = product;
 
             console.log(product);

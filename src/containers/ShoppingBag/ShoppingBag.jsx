@@ -32,8 +32,7 @@ const ShoppingBag = () => {
           <div className="shoppingBagItems">
             {cart.length > 0 ? (
               cart.map((product) => {
-                const { id, name, gender, size, price, description, images } =
-                  product;
+                const { id } = product;
 
                 return <ShoppingBagItem key={id} product={product} />;
               })

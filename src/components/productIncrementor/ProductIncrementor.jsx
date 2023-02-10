@@ -1,4 +1,5 @@
-import { React, useState, useEffect, useContext } from "react";
+/* eslint-disable eqeqeq */
+import { React, useContext } from "react";
 import "./productIncrementor.css";
 
 import { MyContext } from "../../context";

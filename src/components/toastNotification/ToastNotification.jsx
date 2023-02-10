@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import "./toastNotification.css";
 import { MyContext } from "../../context";
 
@@ -7,15 +7,14 @@ import { FaInfo } from "react-icons/fa";
 import { MdOutlineSmsFailed } from "react-icons/md";
 
 const ToastNotification = () => {
-  const { showNotification, setShowNotification, handleToastNotification } =
-    useContext(MyContext);
+  const { showNotification, setShowNotification } = useContext(MyContext);
 
   // setTimeout(() => {
   //   setShowNotification(showNotification.display == false);
   // }, 1000);
 
   const toastNotificationStyle =
-    showNotification.display == true ? "showNotification" : "hideNotification";
+    showNotification.display === true ? "showNotification" : "hideNotification";
 
   let Icon;
   switch (showNotification.type) {
@@ -43,7 +42,9 @@ const ToastNotification = () => {
           <p>{showNotification.subMessage}</p>
         </div>
         <button
-          onClick={() => setShowNotification(showNotification.display == false)}
+          onClick={() =>
+            setShowNotification(showNotification.display === false)
+          }
           className="closeBtn"
         >
           X

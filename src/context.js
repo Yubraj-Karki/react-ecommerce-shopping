@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import data from "./data";
 
 export const MyContext = React.createContext();
@@ -10,8 +10,8 @@ export const MyContext = React.createContext();
 // };
 
 export const ContextProvider = ({ children }) => {
-  const [products, setProducts] = useState(data);
-  const [sortedProducts, setSortedProducts] = useState([]);
+  const [products] = useState(data);
+  const [sortedProducts] = useState([]);
   const [featuredProducts, setFeaturedProducts] = useState([]);
 
   // filters
@@ -21,8 +21,8 @@ export const ContextProvider = ({ children }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   // slider
-  const [sliderItems, setSliderItems] = useState([]);
-  const [sliderIndex, setSliderIndex] = useState(0);
+  const [sliderItems] = useState([]);
+  const [sliderIndex] = useState(0);
 
   // shopping cart
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -42,11 +42,11 @@ export const ContextProvider = ({ children }) => {
   });
 
   const handleToastNotification = (type, message, show) => {
-    if (type == "error") {
+    if (type === "error") {
       console.log("error");
-    } else if (type == "success") {
+    } else if (type === "success") {
       console.log("success");
-    } else if (type == "info") {
+    } else if (type === "info") {
       console.log("info");
     } else {
       console.log("null");
@@ -55,13 +55,15 @@ export const ContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    setFeaturedProducts(products.filter((product) => product.featured == true));
+    setFeaturedProducts(
+      products.filter((product) => product.featured === true)
+    );
     setFilteredProducts(filterProducts(size, maxPrice, gender));
   }, [size, maxPrice, gender]);
 
   const getProduct = (id) => {
     let tempProducts = [...products];
-    let product = tempProducts.find((product) => product.id == id);
+    let product = tempProducts.find((product) => product.id === id);
 
     return product;
   };
@@ -72,9 +74,9 @@ export const ContextProvider = ({ children }) => {
     const name = product.target.name;
     const value = product.target.value;
 
-    if (name == "size") {
+    if (name === "size") {
       setSize(value);
-    } else if (name == "gender") {
+    } else if (name === "gender") {
       setGender(value);
     } else {
       setMaxPrice(value);
@@ -85,13 +87,15 @@ export const ContextProvider = ({ children }) => {
     let tempProducts = [...products];
 
     if (gender !== "all") {
-      tempProducts = tempProducts.filter((product) => product.gender == gender);
+      tempProducts = tempProducts.filter(
+        (product) => product.gender === gender
+      );
     }
 
     tempProducts = tempProducts.filter((product) => product.price <= maxPrice);
 
-    if (size != "all") {
-      tempProducts = tempProducts.filter((product) => product.size == size);
+    if (size !== "all") {
+      tempProducts = tempProducts.filter((product) => product.size === size);
     }
 
     return tempProducts;
@@ -100,7 +104,7 @@ export const ContextProvider = ({ children }) => {
   const handleSlider = () => {};
 
   const showHideCart = () => {
-    const showHideCart = isCartOpen == true ? false : true;
+    const showHideCart = isCartOpen === true ? false : true;
 
     setIsCartOpen(showHideCart);
   };
@@ -166,7 +170,7 @@ export const ContextProvider = ({ children }) => {
 
   const calcTotalItemsInCart = () => {
     let totalItems = cart
-      .map((cartItem, index) => {
+      .map((cartItem) => {
         return cartItem.count;
       })
       .reduce((prevCount, currentCount) => prevCount + currentCount, 0);
@@ -176,7 +180,7 @@ export const ContextProvider = ({ children }) => {
 
   const calcTotalAmount = () => {
     let cost = cart
-      .map((item, index) => {
+      .map((item) => {
         item.total = item.count * item.price;
         return item.total;
       })

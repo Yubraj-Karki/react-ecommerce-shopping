@@ -8,8 +8,7 @@ import "./navbar.css";
 import { SlHandbag } from "react-icons/sl";
 
 const Navbar = () => {
-  const { isCartOpen, showHideCart, cart, calcTotalItemsInCart } =
-    useContext(MyContext);
+  const { showHideCart, calcTotalItemsInCart } = useContext(MyContext);
 
   return (
     <div className="nav">

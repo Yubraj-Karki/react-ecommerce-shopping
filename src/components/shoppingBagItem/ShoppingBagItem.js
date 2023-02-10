@@ -1,4 +1,4 @@
-import { React, useContext, useState } from "react";
+import { React, useContext } from "react";
 import "./shoppingBagItem.css";
 
 import { ProductIncrementor } from "../../components/index";
@@ -6,18 +6,7 @@ import { ProductIncrementor } from "../../components/index";
 import { MyContext } from "../../context";
 
 const ShoppingBagItem = ({ product }) => {
-  const {
-    id,
-    name,
-    gender,
-    size,
-    price,
-    description,
-    images,
-    inCart,
-    count,
-    total,
-  } = product;
+  const { id, name, price, images } = product;
 
   const {
     counterValues,
