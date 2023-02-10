@@ -14,7 +14,7 @@ const ProductItem = ({ product, sliderMovement }) => {
     <div style={sliderStyle} className="productItem">
       <Link to={`/product/${id}`}>
         <div className="productItemImg">
-          <img src={images} />
+          <img src={images} alt="" />
         </div>
         <div className="container productItemFooter">
           <h3>{name}</h3>

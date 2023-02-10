@@ -4,7 +4,7 @@ import img3 from "./assets/images/pexels-cottonbro-studio-8360771.jpg";
 import img4 from "./assets/images/pexels-oguz-inan-10995370.jpg";
 import img5 from "./assets/images/pexels-cottonbro-studio-6532131.jpg";
 
-export default [
+const data = [
   {
     id: 1,
     name: "jeans pant",
@@ -118,3 +118,5 @@ export default [
     total: 0,
   },
 ];
+
+export default data;
