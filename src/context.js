@@ -59,6 +59,7 @@ export const ContextProvider = ({ children }) => {
       products.filter((product) => product.featured === true)
     );
     setFilteredProducts(filterProducts(size, maxPrice, gender));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [size, maxPrice, gender]);
 
   const getProduct = (id) => {
