@@ -96,9 +96,9 @@ export const ContextProvider = ({ children }) => {
   const filterProducts = (name, size, maxPrice, gender) => {
     let tempProducts = [...products];
 
-    if (name != "") {
-      tempProducts = tempProducts.filter(
-        (product) => product.name == name.toLowerCase()
+    if (name !== "") {
+      tempProducts = tempProducts.filter((product) =>
+        product.name.toLowerCase().includes(name.toLowerCase())
       );
     }
     if (gender !== "all") {
