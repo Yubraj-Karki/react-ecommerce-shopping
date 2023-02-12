@@ -10,7 +10,7 @@ const Home = () => {
     <>
       <section className="homeBanner">
         <video id="myVideo" autoPlay loop muted>
-          <source src="Videos/productionID_5119278.mp4" type="video/mp4" />
+          <source src="Videos/bg-video.mp4" type="video/mp4" />
         </video>
         <div className="container">
           <div className="homeBannerContent">
