@@ -127,3 +127,11 @@ main h4 {
   display: inline-block;
   margin-left: 1%;
 }
+
+.noItemFoundMsg {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 30px;
+  transform: translate(25%, 100%);
+}

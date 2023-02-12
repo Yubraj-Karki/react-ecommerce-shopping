@@ -6,8 +6,16 @@ import { MyContext } from "../../context";
 import "./products.css";
 
 const Products = () => {
-  const { products, size, filteredProducts, maxPrice, gender, handleChange } =
-    useContext(MyContext);
+  const {
+    products,
+    size,
+    filteredProducts,
+    maxPrice,
+    gender,
+    name,
+    handleChange,
+    handleSearchInput,
+  } = useContext(MyContext);
 
   const getUniqueValues = (items, value) => {
     return [
@@ -73,12 +81,14 @@ const Products = () => {
           <h4>Search Products</h4>
           <input
             className="productSearchInput"
+            onChange={handleSearchInput}
+            value={name}
             type="text"
             focus="true"
             placeholder="Type product name here..."
           />
           {filteredProducts.length <= 0 ? (
-            <h3>Oops! No such item found :(</h3>
+            <h3 className="noItemFoundMsg">Oops! No such item found :(</h3>
           ) : (
             <>
               <h3>

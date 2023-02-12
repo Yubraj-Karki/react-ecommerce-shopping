@@ -1,5 +1,5 @@
 import { React, useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { MyContext } from "../../context";
 
 import { ProductIncrementor } from "../index";
@@ -47,6 +47,9 @@ const SingleProduct = () => {
             <img src={images} alt="" />
           </div>
           <div className="right">
+            <Link to="/products">
+              <button>Continue shopping</button>
+            </Link>
             <div className="singleProductHeader">
               <h1 className="singleProductName">{name}</h1>
               <p className="singleProductPrice">Rs. {price}</p>

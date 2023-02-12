@@ -18,6 +18,7 @@ export const ContextProvider = ({ children }) => {
   const [size, setSize] = useState("all");
   const [maxPrice, setMaxPrice] = useState(4000);
   const [gender, setGender] = useState("all");
+  const [name, setName] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   // slider
@@ -58,9 +59,9 @@ export const ContextProvider = ({ children }) => {
     setFeaturedProducts(
       products.filter((product) => product.featured === true)
     );
-    setFilteredProducts(filterProducts(size, maxPrice, gender));
+    setFilteredProducts(filterProducts(name, size, maxPrice, gender));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [size, maxPrice, gender]);
+  }, [name, size, maxPrice, gender]);
 
   const getProduct = (slug) => {
     let tempProducts = [...products];
@@ -85,9 +86,21 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
-  const filterProducts = (size, maxPrice, gender) => {
+  const handleSearchInput = (e) => {
+    const name = e.target.value;
+    setName(name);
+  };
+
+  console.log(name);
+
+  const filterProducts = (name, size, maxPrice, gender) => {
     let tempProducts = [...products];
 
+    if (name != "") {
+      tempProducts = tempProducts.filter(
+        (product) => product.name == name.toLowerCase()
+      );
+    }
     if (gender !== "all") {
       tempProducts = tempProducts.filter(
         (product) => product.gender === gender
@@ -245,7 +258,9 @@ export const ContextProvider = ({ children }) => {
         size,
         maxPrice,
         gender,
+        name,
         handleChange,
+        handleSearchInput,
         handleSlider,
         sliderItems,
         sliderIndex,
