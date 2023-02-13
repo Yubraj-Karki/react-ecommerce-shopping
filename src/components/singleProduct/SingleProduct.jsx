@@ -38,6 +38,13 @@ const SingleProduct = () => {
     opacity: 1,
   };
 
+  const isButtonDisabled =
+    !counterValues.hasOwnProperty(id) ||
+    counterValues[id] <= 0 ||
+    counterValues[id] >= 11;
+
+  const buttonStyle = isButtonDisabled ? buttonStyleDisable : buttonStyleEnable;
+
   console.log(counterValues, "counterValues");
 
   return (
@@ -75,18 +82,8 @@ const SingleProduct = () => {
                 />
               </div>
               <button
-                disabled={
-                  !counterValues.hasOwnProperty(id) ||
-                  counterValues[id] <= 0 ||
-                  counterValues[id] >= 11
-                }
-                style={
-                  !counterValues.hasOwnProperty(id) ||
-                  counterValues[id] <= 0 ||
-                  counterValues[id] >= 11
-                    ? buttonStyleDisable
-                    : buttonStyleEnable
-                }
+                disabled={isButtonDisabled}
+                style={buttonStyle}
                 onClick={() => addToCart(product, counterValues[id])}
                 className="addToCartBtn"
               >
