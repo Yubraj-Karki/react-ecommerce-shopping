@@ -1,5 +1,5 @@
 .singleProduct {
-  margin-top: 14vh;
+  margin-top: 11vh;
   background: white;
   height: 100%;
 }
@@ -101,13 +101,13 @@
 .goBack {
   display: flex;
   align-items: center;
-  color: black;
-  margin-bottom: 40px;
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
 }
 
 .goBack .icon {
   display: inline-block;
   color: black;
   font-size: 25px;
-  margin-right: 5px;
+  margin-right: 3px;
 }
