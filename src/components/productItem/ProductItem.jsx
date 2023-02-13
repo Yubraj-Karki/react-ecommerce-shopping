@@ -1,4 +1,6 @@
 import React from "react";
+import LazyLoad from "react-lazyload";
+
 import "./productItem.css";
 import { Link } from "react-router-dom";
 
@@ -13,9 +15,11 @@ const ProductItem = ({ product, sliderMovement }) => {
   return (
     <div style={sliderStyle} className="productItem">
       <Link to={`/product/${id}`}>
-        <div className="productItemImg">
-          <img src={images} alt="" />
-        </div>
+        <LazyLoad height={200}>
+          <div className="productItemImg">
+            <img src={images} alt="" />
+          </div>
+        </LazyLoad>
         <div className="container productItemFooter">
           <h3>{name}</h3>
           <h2>Rs.{price}</h2>
