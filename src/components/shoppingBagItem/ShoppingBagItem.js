@@ -9,7 +9,6 @@ const ShoppingBagItem = ({ product }) => {
   const { id, name, price, images, count } = product;
 
   const {
-    counterValues,
     handleIncrementorChange,
     productIncrement,
     productDecrement,
