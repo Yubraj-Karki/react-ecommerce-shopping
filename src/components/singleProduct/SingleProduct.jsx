@@ -76,12 +76,12 @@ const SingleProduct = () => {
               </div>
               <button
                 disabled={
-                  Object.keys(counterValues).length === 0 ||
+                  !counterValues.hasOwnProperty(id) ||
                   counterValues[id] <= 0 ||
                   counterValues[id] >= 11
                 }
                 style={
-                  Object.keys(counterValues).length === 0 ||
+                  !counterValues.hasOwnProperty(id) ||
                   counterValues[id] <= 0 ||
                   counterValues[id] >= 11
                     ? buttonStyleDisable
