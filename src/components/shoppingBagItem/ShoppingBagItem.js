@@ -6,7 +6,7 @@ import { ProductIncrementor } from "../../components/index";
 import { MyContext } from "../../context";
 
 const ShoppingBagItem = ({ product }) => {
-  const { id, name, price, images } = product;
+  const { id, name, price, images, count } = product;
 
   const {
     counterValues,
@@ -29,7 +29,7 @@ const ShoppingBagItem = ({ product }) => {
           <div className="shoppingBagItemCounter">
             <ProductIncrementor
               id={id}
-              counterValue={counterValues[id] || 0}
+              counterValue={count}
               setCounterValue={(newValue) =>
                 handleIncrementorChange(id, newValue)
               }

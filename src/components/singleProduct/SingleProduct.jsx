@@ -47,6 +47,11 @@ const SingleProduct = () => {
 
   console.log(counterValues, "counterValues");
 
+  const addToCartWithReset = (product, count) => {
+    addToCart(product, count);
+    handleIncrementorChange(id, 0);
+  };
+
   return (
     <div className="singleProduct">
       <div className="container">
@@ -84,7 +89,7 @@ const SingleProduct = () => {
               <button
                 disabled={isButtonDisabled}
                 style={buttonStyle}
-                onClick={() => addToCart(product, counterValues[id])}
+                onClick={() => addToCartWithReset(product, counterValues[id])}
                 className="addToCartBtn"
               >
                 Add to cart
