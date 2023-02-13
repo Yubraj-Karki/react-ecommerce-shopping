@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { MyContext } from "../../context";
 
 import { ProductIncrementor } from "../index";
+import { IoIosArrowRoundBack } from "react-icons/io";
 
 import "./singleProduct.css";
 
@@ -42,14 +43,19 @@ const SingleProduct = () => {
   return (
     <div className="singleProduct">
       <div className="container">
+        <Link to="/products">
+          <div className="goBack">
+            <IoIosArrowRoundBack className="icon" />
+
+            <h3>Back To Products</h3>
+          </div>
+        </Link>
+
         <div className="productContent">
           <div className="left">
             <img src={images} alt="" />
           </div>
           <div className="right">
-            <Link to="/products">
-              <button>Continue shopping</button>
-            </Link>
             <div className="singleProductHeader">
               <h1 className="singleProductName">{name}</h1>
               <p className="singleProductPrice">Rs. {price}</p>
