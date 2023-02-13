@@ -172,9 +172,9 @@ export const ContextProvider = ({ children }) => {
     };
 
     if (count <= 0) {
-      notification.message = `We adjusted your item count for this product to 10.`;
+      notification.message = `Can't add more than 10 items of the same type.`;
       notification.subMessage =
-        "Can't add more than 10 items of the same type.";
+        "We adjusted your item count for this product to 10.";
       notification.type = "info";
     }
 
