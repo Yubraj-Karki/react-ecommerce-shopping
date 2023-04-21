@@ -38,7 +38,7 @@ const FeaturedProducts = () => {
         </div>
         {/* <button onClick={handleSlider}>Right</button> */}
         <Link to="/products">
-          <button>See all products</button>
+          <button className="seeAllProductsBtn">See all products</button>
         </Link>
       </div>
     </>

@@ -1,5 +1,7 @@
 .featuredProductsContainer {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .featured {
@@ -7,9 +9,23 @@
   flex-direction: row;
   justify-content: space-between;
   overflow: hidden;
-  /* border: 1px solid green; */
 }
 
 #activeSlider {
   transform: translateX(-290px);
+}
+
+.seeAllProductsBtn {
+  padding: 15px;
+  border-radius: 25px;
+  width: 200px;
+  border: 1px solid grey;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.featuredProductsContainer a {
+  justify-self: center;
+  align-self: center;
 }
