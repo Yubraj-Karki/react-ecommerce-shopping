@@ -1,10 +1,23 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Navbar, SingleProduct, ToastNotification } from "./components/index";
-import { Home, Products } from "./pages/index";
+import { Navbar, ToastNotification } from "./components/index";
+// import { Home, Products } from "./pages/index";
 import { ShoppingBag } from "./containers/index";
+
+const Home = lazy(() =>
+  import("./pages/index").then((module) => ({ default: module.Home }))
+);
+const Products = lazy(() =>
+  import("./pages/index").then((module) => ({ default: module.Products }))
+);
+
+const SingleProduct = lazy(() =>
+  import("./components/index").then((module) => ({
+    default: module.SingleProduct,
+  }))
+);
 
 const App = () => {
   return (
@@ -14,11 +27,13 @@ const App = () => {
         <ShoppingBag />
         <ToastNotification />
       </div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/product/:slug" element={<SingleProduct />} />
-      </Routes>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/product/:slug" element={<SingleProduct />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 };
